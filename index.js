@@ -10,10 +10,11 @@ const port = 3001
 
 app.use(express.json())
 app.use(cors({ 
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://dripfit.vercel.app'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
+
 app.use(require('./auth'));
 
 const connection_url = process.env.MONGO_URL;
