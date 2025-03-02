@@ -2,7 +2,7 @@ require('dotenv').config({path:'../config.env'});
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const Product = require("./Product");
+const Product = require("../Product");
 const app = express()
 const port = 3001
 
@@ -15,7 +15,7 @@ app.use(cors({
   credentials: true,
 }));
 
-app.use(require('./auth'));
+app.use(require('../auth'));
 
 const connection_url = process.env.MONGO_URL;
 
